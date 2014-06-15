@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Homepage</title>
+		<link href="icon_100.png" rel="icon" type="image/x-icon" />
+		<link type="text/css" rel="stylesheet" href="stylesheet.css"/>
+		<meta charset="UTF-8">
+		
+		<script type="text/javascript">
+			function clock_refresh() {
+			var d = new Date();
+			document.getElementById("clock").innerHTML = d.getHours().toString() + ":" + d.getMinutes().toString() + ":" + d.getSeconds().toString();
+			}
+		</script>
+	</head>
+	<body>
+		<div class="menubar">
+			<div class="sites">
+				<a href="./index.html"><img src="./shekels.png" alt="4ch auth"></a>
+			</div>
+		</div>
+		<div class="clock" id="clock">
+			<script type="text/javascript">
+				clock_refresh();
+				setInterval("clock_refresh()", 1000);
+			</script>
+			</div>
+			
+		<div class="page">
+			<div class="sites" id="center-element">
+				<a href="https://www.youtube.com"><img src="ff_yt.png" alt="Youtube"></a>
+				<a href="https://www.outlook.com"><img src="ff_ol.png" alt="Outlook"></a>
+				<a href="https://www.openmailbox.org/webmail/"><img src="ff_om.png" alt="Openmailbox"></a>
+				<br/>
+				<a href="https://sys.4chan.org/auth"><img src="shekel.png" alt="auth"></a>
+				<a href="https://boards.4chan.org/a/"><img src="ff_a.png" alt="animu"></a>
+				<a href="https://boards.4chan.org/b/"><img src="ff_b.png" alt="leegun"></a>
+				<a href="https://boards.4chan.org/g/"><img src="ff_g.png" alt="Tech"></a>
+				<br/>
+				<a href="https://www.arstechnica.com"><img src="ars.png" alt="Ars Technica"></a>
+				<a href="http://www.tomshardware.com"><img src="thw.png" alt="Toms Hardware"></a>
+				<a href="https://www.bbc.co.uk/news"><img src="bbc.png" alt="BBC"></a>
+			</div>
+		</div>
+		
+		<div class="todo">
+			do some shit<br/>
+			make tab system<br/>
+			possibly make todo list editable and savable
+		</div>
+		<div class="search">
+			<form method="get" action="https://duckduckgo.com/?q=">
+				<input id="searchbar" type="text" name="q" size="31" maxlength="255" value="" autofocus="autofocus"/>
+			</form>
+		</div>
+	</body>
+</html>

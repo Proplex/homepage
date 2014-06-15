@@ -1,4 +1,1 @@
-homepage
-========
-
-my homepage :^)
+my custom homepage, enjoy
