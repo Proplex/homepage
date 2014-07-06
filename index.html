@@ -2,56 +2,90 @@
 <html>
 	<head>
 		<title>Homepage</title>
-		<link href="icon_100.png" rel="icon" type="image/x-icon" />
-		<link type="text/css" rel="stylesheet" href="stylesheet.css"/>
 		<meta charset="UTF-8">
 		
-		<script type="text/javascript">
-			function clock_refresh() {
-			var d = new Date();
-			document.getElementById("clock").innerHTML = d.getHours().toString() + ":" + d.getMinutes().toString() + ":" + d.getSeconds().toString();
-			}
+		<link href="icon_100.png" rel="icon" type="image/x-icon" />
+		<link type="text/css" rel="stylesheet" href="stylesheet.css"/>
+		<!-- <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type='text/css'> -->
+		
+		<script type="text/javascript" src="./functions.js"></script>
+		
+		<script type="text/javascript"> //feeds
+			weather_feed = "http://open.live.bbc.co.uk/weather/feeds/en/2645425/3dayforecast.rss";
+			weather_feed_num = 3;
+			bbc_feed = "http://feeds.bbci.co.uk/news/england/rss.xml";
+			bbc_feed_num = 10;
 		</script>
 	</head>
 	<body>
-		<div class="menubar">
-			<div class="sites">
-				<a href="./index.html"><img src="./shekels.png" alt="4ch auth"></a>
-			</div>
-		</div>
-		<div class="clock" id="clock">
-			<script type="text/javascript">
-				clock_refresh();
-				setInterval("clock_refresh()", 1000);
-			</script>
-			</div>
-			
-		<div class="page">
-			<div class="sites" id="center-element">
-				<a href="https://www.youtube.com"><img src="ff_yt.png" alt="Youtube"></a>
-				<a href="https://www.outlook.com"><img src="ff_ol.png" alt="Outlook"></a>
-				<a href="https://www.openmailbox.org/webmail/"><img src="ff_om.png" alt="Openmailbox"></a>
-				<br/>
-				<a href="https://sys.4chan.org/auth"><img src="shekel.png" alt="auth"></a>
-				<a href="https://boards.4chan.org/a/"><img src="ff_a.png" alt="animu"></a>
-				<a href="https://boards.4chan.org/b/"><img src="ff_b.png" alt="leegun"></a>
-				<a href="https://boards.4chan.org/g/"><img src="ff_g.png" alt="Tech"></a>
-				<br/>
-				<a href="https://www.arstechnica.com"><img src="ars.png" alt="Ars Technica"></a>
-				<a href="http://www.tomshardware.com"><img src="thw.png" alt="Toms Hardware"></a>
-				<a href="https://www.bbc.co.uk/news"><img src="bbc.png" alt="BBC"></a>
-			</div>
-		</div>
-		
-		<div class="todo">
-			do some shit<br/>
-			make tab system<br/>
-			possibly make todo list editable and savable
-		</div>
+		<div id="test"></div>
 		<div class="search">
 			<form method="get" action="https://duckduckgo.com/?q=">
 				<input id="searchbar" type="text" name="q" size="31" maxlength="255" value="" autofocus="autofocus"/>
 			</form>
 		</div>
+		<div class="menubar">
+			<div class="sites">
+				<img src="./botnet.png" alt="botnet" onmouseover="show_element('botnet')">
+				<img src="./4chan.png" alt="4chan" onmouseover="show_element('4chan')">
+				<img src="./news.png" alt="news" onmouseover="show_element('news')">
+				<img src="./tech.png" alt="tech" onmouseover="show_element('tech')">
+				<img src="./dev.png" alt="dev" onmouseover="show_element('dev')">
+			</div>
+		</div>
+		<div class="sites" id="sites">
+			<div class="row" id="botnet">
+				<a href="https://www.youtube.com"><img src="ff_yt.png" alt="Youtube"></a>
+				<a href="https://www.outlook.com"><img src="ff_ol.png" alt="Outlook"></a>
+				<a href="https://www.openmailbox.org/webmail/"><img src="ff_om.png" alt="Openmailbox"></a>
+			</div>
+			<div class="row" id="4chan">
+				<a href="https://sys.4chan.org/auth"><img src="shekel.png" alt="auth"></a>
+				<a href="https://boards.4chan.org/a/"><img src="ff_a.png" alt="animu"></a>
+				<a href="https://boards.4chan.org/b/"><img src="ff_b.png" alt="leegun"></a>
+				<a href="https://boards.4chan.org/f/"><img src="ff_f.png" alt="Flash"></a>
+				<a href="https://boards.4chan.org/g/"><img src="ff_g.png" alt="Tech"></a>
+				<a href="https://boards.4chan.org/v/"><img src="ff_v.png" alt="Vidya"></a>
+			</div>
+			<div class="row" id="news">
+				<a href="https://www.bbc.co.uk/news"><img src="bbc.png" alt="BBC"></a>
+			</div>
+			<div class="row" id="tech">
+				<a href="https://www.arstechnica.com"><img src="ars.png" alt="Ars Technica"></a>
+				<a href="http://www.tomshardware.com"><img src="thw.png" alt="Toms Hardware"></a>
+			</div>
+			<div class="row" id="dev">
+				<a href="https://www.css-tricks.com"><img src="csstricks.png" alt="css tricks"></a>
+			</div>
+		</div>
+		<script type="text/javascript">show_element("botnet");</script>
+		<div id="page-container">
+			<div id="page">
+				<div class="content-area" id="clock">
+					<script type="text/javascript">
+						clock_refresh();
+						setInterval("clock_refresh()", 1000);
+					</script>
+				</div>
+				<div class="content-area" id="todo">
+					do some shit<br/>
+					add some moe shit<br/>
+					possibly make todo list editable and savable
+				</div>
+				<div class="content-area" id="weather">
+					<script type="text/javascript">
+						document.write('<script id="weather-feed" type="text/javascript" src="http://feed2js.org//feed2js.php?src='+
+							weather_feed + '&chan=y&num=' + weather_feed_num + '&utf=y"  "></scr' + 'ipt>');
+					</script>
+				</div>
+				<div class="content-area" id="rss">
+					<script type="text/javascript">
+						document.write('<script id="weather-feed" type="text/javascript" src="http://feed2js.org//feed2js.php?src='+
+							bbc_feed + '&chan=y&num=' + bbc_feed_num + '&utf=y"  "></scr' + 'ipt>');
+					</script>
+				</div>
+			</div>
+		</div>
+		
 	</body>
 </html>
