@@ -2,7 +2,7 @@
 html {
 	height:100%;
 	width:100%;
-	background-image:url("altcott.png");
+	background-image:url("./walls/amsterdambdesk.jpg");
 	background-repeat:repeat;
 	background-attachment:fixed;
 	font-family:"Open Sans"; /* font can be obtained from  https://www.opensans.com/ */
@@ -32,7 +32,7 @@ body {
 #page {
 	/* margin-left:calc(50% - 400px); */
 	margin:auto;
-	width:800px;
+	width:1000px;
 	display:flex;
 	flex-direction:column;
 	justify-content:center;
@@ -47,13 +47,22 @@ body {
 	text-align:center;
 	border-bottom: 1px solid rgba(255,255,255,.1);
 }
+#rss {
+	display:flex;
+	flex-direction:row;
+	flex-wrap:wrap;
+	justify-content:space-around;
+	align-items:stretch;
+}
 .rss-box ul {
 	list-style-type:none!important;
+	padding:0;
 }
 .rss-box a {
 	color:rgba(255,255,255,.7);
 }
 .rss-title {display:none;}
+
 #clock {
 	font-size:64px;
 }
@@ -62,6 +71,8 @@ body {
 }
 img {
 	border:0;
+}
+.sites img {
 	border-radius:55px;
 }
 #sites {

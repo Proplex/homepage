@@ -11,10 +11,15 @@
 		<script type="text/javascript" src="./functions.js"></script>
 		
 		<script type="text/javascript"> //feeds
-			weather_feed = "http://open.live.bbc.co.uk/weather/feeds/en/2645425/3dayforecast.rss";
 			weather_feed_num = 3;
+			weather_feed = "http://open.live.bbc.co.uk/weather/feeds/en/2645425/3dayforecast.rss";
+			news_feed_num = 10;
 			bbc_feed = "http://feeds.bbci.co.uk/news/england/rss.xml";
-			bbc_feed_num = 10;
+			bbc_world_feed = "http://feeds.bbci.co.uk/news/world/rss.xml";
+			bbc_tech_feed = "http://feeds.bbci.co.uk/news/technology/rss.xml";
+			reuters_politics_feed = "http://feeds.reuters.com/Reuters/PoliticsNews";
+			reuters_tech_feed = "http://feeds.reuters.com/reuters/technologyNews";
+			
 		</script>
 	</head>
 	<body>
@@ -94,10 +99,22 @@
 				</div>
 				<div class="content-area" id="rss">
 					<script type="text/javascript">
-						document.write('<script id="weather-feed" type="text/javascript" src="http://feed2js.org//feed2js.php?src='+
-							bbc_feed + '&chan=y&num=' + bbc_feed_num + '&utf=y"  "></scr' + 'ipt>');
+						document.write('<script id="news-feed" type="text/javascript" src="http://feed2js.org//feed2js.php?src='+
+							bbc_feed + '&chan=y&num=' + news_feed_num + '&utf=y"  "></scr' + 'ipt>');
+						document.write('<script id="news-tech-feed" type="text/javascript" src="http://feed2js.org//feed2js.php?src='+
+							bbc_world_feed + '&chan=y&num=' + news_feed_num + '&utf=y"  "></scr' + 'ipt>');
+						document.write('<script id="news-tech-feed" type="text/javascript" src="http://feed2js.org//feed2js.php?src='+
+							bbc_tech_feed + '&chan=y&num=' + news_feed_num + '&utf=y"  "></scr' + 'ipt>');
 					</script>
 				</div>
+				<!-- <div class="content-area" id="rss">
+					<script type="text/javascript">
+						document.write('<script id="news-tech-feed" type="text/javascript" src="http://feed2js.org//feed2js.php?src='+
+							reuters_politics_feed + '&chan=y&num=' + news_feed_num + '&utf=y"  "></scr' + 'ipt>');
+						document.write('<script id="news-tech-feed" type="text/javascript" src="http://feed2js.org//feed2js.php?src='+
+							reuters_tech_feed + '&chan=y&num=' + news_feed_num + '&utf=y"  "></scr' + 'ipt>');
+					</script>
+				</div> -->
 			</div>
 		</div>
 		
