@@ -2,9 +2,11 @@
 html {
 	height:100%;
 	width:100%;
-	background-image:url("./walls/amsterdambdesk.jpg");
-	background-repeat:repeat;
+	background-color: #256bcc;
+	background-image:url("./walls/1410808945753.png");
+	background-repeat:repeat-x;
 	background-attachment:fixed;
+	background-position:bottom;
 	font-family:"Open Sans"; /* font can be obtained from  https://www.opensans.com/ */
 	font-size:10pt;
 }
